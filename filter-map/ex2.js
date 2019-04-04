@@ -22,9 +22,22 @@ Tableau en entrée:
 Sortie attendue:
 ['Bordeaux', 'Lille', 'Marseille', 'Reims', 'Toulouse']
 
+
+
 */
+function getCampusesTeachingReact(campuses){
+  let array = [...campuses];
+  array = array.filter(x => (x.curriculums.includes("JS/React"))).map(x => x.city)
+  return array;
+};
+
+
+/*
 
 function getCampusesTeachingReact(campuses) {
-}
 
+  const campuse = campuses.filter(function(curic){return curic.curriculums === curic.curriculums.includes("JS/React")}).map(function(curic){return curic.city});
+    return campuse;
+};
+*/
 module.exports = getCampusesTeachingReact;

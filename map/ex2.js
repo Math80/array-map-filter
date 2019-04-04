@@ -43,7 +43,13 @@ En sortie: [
  */
 
 function getFoodCategories(foods) {
+  const isFoodGood = foods.map(function(goFood){
+    let i = (goFood.isVegetarian) ? goFood.food + " " + "is suitable for vegetarians" : goFood.food + " " + "is not suitable for vegetarians";
+    return i;
+  });
+  return isFoodGood;
 }
+
 
 
 

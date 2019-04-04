@@ -25,9 +25,54 @@ Sortie attendue:
 ]
 
 */
+function filterOffensiveComments(comments, bannedWords){
+  let offensive = [...comments];
+  for (let i = 0; i < bannedWords.length; i++){
+  offensive = offensive.filter(x => !(x.toLowerCase().includes(bannedWords[i])))
+  }
+  return offensive;
+} 
 
+/*
 function filterOffensiveComments(comments, bannedWords) {
-}
+  let result = [];
+  result = comments.filter(function(comment) {
+    let isPresent = false;
+    for (let i = 0; i < bannedWords.length; i++) {
+      if (comment.includes(bannedWords[i])) {
+        isPresent = true;
+      }
+    }
+
+    if (isPresent) {
+      // si comment contient un des éléments de bannedWords
+      return false;
+    } else {
+      // sinon
+      return true;
+    }
+  });
+  return result;
+};
+console.log(filterOffensiveComments(comments, bannedWords));
+
+*/
+/* TENTATIVE
+function filterOffensiveComments(comments, bannedWords) {
+  const offensive = comments.filter(function(comment){
+    for (let i = 0; i < bannedWords.length; i++){
+      if ((comment.toLowerCase).find(bannedWords[i])){
+        
+      }
+      
+    }
+    return comment;
+    
+  });
+  console.log(offensive);
+};
+console.log(filterOffensiveComments(comments, bannedWords));
+*/
 
 // Ne pas modifier l'export
 module.exports = filterOffensiveComments;
